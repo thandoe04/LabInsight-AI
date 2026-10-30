@@ -1,0 +1,93 @@
+# ============================
+# LabInsight AI — .gitignore
+# ============================
+
+# Environment / secrets — NEVER commit these
+.env
+.env.local
+.env.production
+.env.staging
+backend/.env
+frontend/.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+.venv/
+venv/
+ENV/
+env/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+*.log
+*.pot
+*.mo
+
+# Alembic generated — include versions but not pycache
+backend/alembic/versions/__pycache__/
+
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/coverage/
+
+# ML artifacts — never commit model weights or large datasets
+backend/mlruns/
+backend/mlartifacts/
+backend/app/ml/model_registry/artifacts/
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.h5
+*.onnx
+
+# Uploads (server-generated)
+backend/uploads/
+
+# Reports (generated)
+backend/generated_reports/
+
+# IDE / OS
+.idea/
+.vscode/settings.json
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Docker
+*.override.yml
+
+# Test outputs
+test-results/
+playwright-report/
+playwright/.cache/
+
+# Security scan outputs
+bandit-report.json
+semgrep-report.json
+zap-report.html
