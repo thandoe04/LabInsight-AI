@@ -14,8 +14,9 @@ pydantic-settings==2.6.1
 email-validator==2.2.0
 
 # Database
-sqlalchemy==2.0.36
+sqlalchemy[asyncio]==2.0.36
 alembic==1.14.0
+greenlet==3.1.1
 psycopg[binary]==3.2.3
 
 # Security & Crypto
@@ -49,9 +50,11 @@ httpx==0.28.1
 python-slugify==8.0.4
 structlog==24.4.0
 
-# Testing & Quality
+# Testing (included in image so `docker compose exec backend pytest` works)
 pytest==8.3.4
 pytest-asyncio==0.24.0
 pytest-cov==6.0.0
-bandit==1.8.0
-pip-audit==2.7.3
+
+# NOTE: bandit and pip-audit are heavy security-scanning tools.
+# Run them separately: pip install -r requirements-dev.txt
+# They are NOT installed in the runtime Docker image to keep it lean.

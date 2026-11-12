@@ -1,0 +1,11 @@
+# ====================================================
+# LabInsight AI — Dev / Security Scanning Tools
+# Install OUTSIDE the Docker container on your host:
+#   pip install -r requirements-dev.txt
+# ====================================================
+
+-r requirements.txt
+
+# Security scanning (heavy — not in Docker runtime image)
+bandit==1.8.0
+pip-audit==2.7.3

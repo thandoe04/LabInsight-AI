@@ -206,7 +206,12 @@ async def login(
     )
 
 
-@router.post("/logout", status_code=status.HTTP_204_NO_CONTENT)
+@router.post(
+    "/logout",
+    status_code=status.HTTP_204_NO_CONTENT,
+    response_class=Response,
+    response_model=None,
+)
 async def logout(
     request: Request,
     response: Response,
@@ -234,7 +239,12 @@ async def logout(
     )
 
 
-@router.post("/logout-all", status_code=status.HTTP_204_NO_CONTENT)
+@router.post(
+    "/logout-all",
+    status_code=status.HTTP_204_NO_CONTENT,
+    response_class=Response,
+    response_model=None,
+)
 async def logout_all(
     request: Request,
     response: Response,
@@ -268,7 +278,12 @@ async def get_me(current_user: CurrentUser) -> Any:
     )
 
 
-@router.post("/password-reset/request", status_code=status.HTTP_204_NO_CONTENT)
+@router.post(
+    "/password-reset/request",
+    status_code=status.HTTP_204_NO_CONTENT,
+    response_class=Response,
+    response_model=None,
+)
 @limiter.limit(f"{_settings.RATE_LIMIT_RESET_PER_MINUTE}/minute")
 async def request_password_reset(
     request: Request,

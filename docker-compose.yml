@@ -8,8 +8,8 @@ services:
       POSTGRES_USER: labinsight_app
       POSTGRES_PASSWORD: labinsight_dev_secret_pw_123
     ports:
-      # Bind strictly to localhost to prevent public network exposure
-      - "127.0.0.1:5432:5432"
+      # Bind strictly to localhost on a host port separate from local PostgreSQL
+      - "127.0.0.1:15432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
